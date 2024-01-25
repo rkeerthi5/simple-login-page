@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+    .login-container {
+      width: 300px;
+      margin: 100px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #00ff00;
+      color: #000000;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #message {
+      margin-top: 10px;
+      color: red;
+    }
+  </style>
+  <script>
+    function checkCredentials() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var messageDiv = document.getElementById("message");
+
+      // Replace "your_username" and "your_password" with the actual credentials
+      if (username === "your_username" && password === "your_password") {
+        // Redirect to the protected content
+        window.location.href = "protected.html";
+      } else {
+        // Display message in the "message" div
+        messageDiv.innerHTML = "Incorrect username or password. Please try again.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login Page</h1>
+    <label for="username">Username:</label>
+    <input type="text" id="username">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password">
+
+    <button onclick="checkCredentials()">Login</button>
+
+    <div id="message"></div>
+  </div>
+</body>
+</html>
